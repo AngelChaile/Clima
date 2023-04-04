@@ -3,7 +3,7 @@ const api = {
     url: 'http://api.openweathermap.org/data/2.5/weather'
 }
 
-const card = document.getElementById('card');
+let card = document.getElementById('card');
 
 const city = document.getElementById('city');
 const date = document.getElementById('date');
@@ -17,6 +17,7 @@ function updateImages(data) {
     let src = 'img/temperatura.png';
     if (temp > 26) {
         src = 'img/temperatura-alta.png';
+        card.style.background = 'img/sun.png';
     } else if(temp < 20){
         src = 'img/temperatura-baja.png';
     }
@@ -36,7 +37,7 @@ async function search(query) {
        updateImages(data);
     } catch (err) {
         console.log(err);
-        alert('hubo un error');
+        alert('Hubo un error, ingreso mal el nombre');
     }
 }
 
