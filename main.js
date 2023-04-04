@@ -3,6 +3,8 @@ const api = {
     url: 'http://api.openweathermap.org/data/2.5/weather'
 }
 
+const card = document.getElementById('card');
+
 const city = document.getElementById('city');
 const date = document.getElementById('date');
 const tempImg = document.getElementById('temp-img');
@@ -16,7 +18,7 @@ function updateImages(data) {
     if (temp > 26) {
         src = 'img/temperatura-alta.png';
     } else if(temp < 20){
-        src = 'img/temperatura-baja';
+        src = 'img/temperatura-baja.png';
     }
     tempImg.src = src;
 }
@@ -25,6 +27,7 @@ async function search(query) {
     try {
        const response = await fetch(`${api.url}?q=${query}&appid=${api.key}&lang=es`);
        const data = await response.json();
+       card.style.display = 'block';
        city.innerHTML = `${data.name}, ${data.sys.country}`;
        date.innerHTML = (new Date()).toLocaleDateString();
        temp.innerHTML = `${toCelcius(data.main.temp)}°`;

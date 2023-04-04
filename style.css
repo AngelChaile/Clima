@@ -64,6 +64,7 @@ footer{
     padding: 20px;
     text-align: center;
     border-radius: 3px;
+    display: none;
 }
 
 .city{
