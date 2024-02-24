@@ -1,6 +1,6 @@
 const api = {
     key: 'b73397dc4a26f4ac65388432b716a5d0',
-    url: 'http://api.openweathermap.org/data/2.5/weather'
+    url: 'https://api.openweathermap.org/data/2.5/weather'
 }
 
 let card = document.getElementById('card');
@@ -37,7 +37,7 @@ async function search(query) {
        updateImages(data);
     } catch (err) {
         console.log(err);
-        alert('Hubo un error, ingreso mal el nombre');
+        alert('Hubo un error, a ingresado mal el nombre');
     }
 }
 
