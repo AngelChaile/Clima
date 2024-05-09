@@ -13,17 +13,36 @@ const weather = document.getElementById("weather");
 const range = document.getElementById("range");
 
 function updateImages(data) {
-  console.log(data);
   const temp = toCelcius(data.main.temp);
   let src = "img/temperatura.png";
-  if (temp > 26) {
-    src = "img/temperatura-alta.png";
+
+  if (data.weather[0].description == "cielo claro") {
+    src = "img/sol.gif";
+  }
+  if (data.weather[0].description == "nubes") {
+    src = "img/nubes.gif";
+  }
+  if (data.weather[0].description == "algo de nubes") {
+    src = "img/algoDeNubes.gif";
+  }
+  if (data.weather[0].description == "nubes dispersas") {
+    src = "img/nubesDispersas.gif";
+  }
+  if (data.weather[0].description == "muy nuboso") {
+    src = "img/muyNuboso.gif";
+  }
+  if (data.weather[0].description == "lluvia ligera") {
+    src = "img/tormenta.png";
+  }
+
+  /*  if (temp > 26) {
+    src = "img/sol.gif";
     card.style.background = "img/sun.png";
   } else if (data.weather[0].description == "muy nuboso") {
     src = "img/tormenta.png";
   } else if (temp < 20) {
     src = "img/temperatura-baja.png";
-  }
+  } */
   tempImg.src = src;
 }
 
