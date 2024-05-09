@@ -1,109 +1,157 @@
-*{
-    font-family: 'Lato', sans-serif;
+/* General Styles */
+* {
+  font-family: "Roboto", sans-serif; /* Puedes cambiar esto por Montserrat o cualquier otra fuente */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    --bg-color: #2C2C2C;
-    --text-color: #F3F6F5;
-    font-size: 18px;
+:root {
+  --bg-color: #2c2c2c;
+  --text-color: #f3f6f5;
+  --highlight-color: aqua;
+  --azulCeleste: #00ffff;
+  --azulNeon: #1e90ff;
+  --azulElectrico: #7df9ff;
+  --azulCian: #00bfff;
+  --padding: 16px;
 }
 
-body{
-    font-family: 'Lato', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-color);
-
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  padding: var(--padding);
 }
 
-h1{
-    font-family: 'Lato', sans-serif;
-    font-size: 36px;
-    text-align: center;
-    padding: 15px;
-    color: aqua;
+header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-a{
-    color: var(--text-color);
+h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.8rem;
+  color: var(--azulNeon);
+  text-align: center;
 }
 
-p{
-    margin-bottom: 0.75rem;
-    line-height: 1.2rem;
+.main-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 16px;
 }
 
-footer{
-    position: fixed;
-    bottom: 0;
-    padding: 20px 0px;
-    border-top: solid gray;
-    width: 100%;
-    text-align: center;
+.search-form {
+  text-align: center;
+  margin-bottom: 24px;
 }
 
-.search-form{
-    margin: 20px 20px;
+.searchbox {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
-.searchbox{
-    padding: 10px 20px;
-    background-color: var(--text-color);
-    width: 480px;
-    margin: 0px auto;
-    border-radius: 3px;
+.search {
+  width: 100%;
+  padding: 10px 16px;
+  border-radius: 4px;
+  border: 2px solid var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--azulElectrico);
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 500;
 }
 
-
-.search{
-    width: 100%;
-    background-color: var(--text-color);
-    border: none;
-    font-size: 1rem;
+.search:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--azulCeleste); /* Efecto de foco tipo neón */
 }
 
-.search:focus{
-    outline: none;
+/* Weather Card */
+.weather-card {
+  display: none;
+  background-color: var(--text-color);
+  color: var(--bg-color);
+  padding: 24px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 0 auto;
+  max-width: 480px;
 }
 
-.weather-card{
-    margin: 20px 20px;
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    padding: 20px;
-    text-align: center;
-    border-radius: 3px;
-    display: none;
+/* City Information */
+.city {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
-.city{
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    margin-bottom: 0.5rem;
+.date {
+  font-size: 0.8rem;
+  margin-bottom: 16px;
 }
 
-.date{
-    font-size: 0.9rem;
-    margin-bottom: 2rem;
+.temperature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
 }
 
-.temperature{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
+.temp-img {
+  width: 40px;
+  margin-right: 10px;
 }
 
-.temp-img{
-    width: 50px;
-    margin-right: 10px;
+.temp {
+  font-size: 1.5rem;
+  font-weight: bold;
 }
 
-.temp{
-    font-size: 2.2rem;
-    font-weight: bold;
+.weather {
+  font-size: 1.2rem;
 }
 
-.weather{
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+.range {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+/* Diseño general del botón */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave */
+}
+
+/* Estilo específico para el botón de inversión de colores */
+#toggle-colors {
+  background-color: var(--azulNeon);
+  color: var(--text-color);
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+#toggle-colors:hover {
+  background-color: var(--azulCian);
+  color: var(--bg-color);
+}
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  border-top: 1px solid gray;
+  background-color: var(--bg-color);
+  text-align: center;
+  font-size: 0.8rem;
 }

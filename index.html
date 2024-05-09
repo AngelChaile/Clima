@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-    <title>Clima</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js" defer></script>
+        <title>🌤️ Clima App</title>
+    </head>
 <body>
-    <h1>BIENVENIDOS A NUESTRA APP DEL CLIMA</h1>
-    <main>
+    <header>
+        <h1>🌤️ Bienvenidos a ClimaApp🌤️</h1>
+    </header>
+    <main class="main-container">
         <div class="search-form">
             <form id="search-form">
                 <div class="searchbox">
                     <input type="text" autocomplete="off" placeholder="Buscar Ciudad..." class="search" id="searchbox" />
                 </div>
+                <button type="button" id="toggle-colors">Cambiar Colores</button>
             </form>
         </div>
         <div class="weather-card" id="card">
@@ -36,8 +37,6 @@
         <p>Creado por Angel Chaile</p>
         <p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a></p>
         <p><a href="https://www.flaticon.com" title="Flaticon">www.flaticon.com</a></p>
-        
-
     </footer>
 </body>
 </html>
