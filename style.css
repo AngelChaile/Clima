@@ -1,6 +1,6 @@
 /* General Styles */
 * {
-  font-family: "Roboto", sans-serif; /* Puedes cambiar esto por Montserrat o cualquier otra fuente */
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -30,7 +30,7 @@ header {
 h1 {
   font-family: "Montserrat", sans-serif;
   font-size: 1.8rem;
-  color: var(--azulNeon);
+  color: var(--text-color);
   text-align: center;
 }
 
@@ -55,9 +55,9 @@ h1 {
   width: 100%;
   padding: 10px 16px;
   border-radius: 4px;
-  border: 2px solid var(--text-color);
-  background-color: var(--bg-color);
-  color: var(--azulElectrico);
+  border: 2px solid var(--bg-color);
+  background-color: var(--text-color);
+  color: var(--bg-color);
   font-size: 1rem;
   text-align: center;
   font-weight: 500;
@@ -119,6 +119,9 @@ h1 {
 }
 
 /* Diseño general del botón */
+.container-btn{
+  text-align: center;
+}
 button {
   padding: 10px 20px;
   font-size: 1rem;

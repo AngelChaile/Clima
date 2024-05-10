@@ -14,35 +14,33 @@ const range = document.getElementById("range");
 
 function updateImages(data) {
   const temp = toCelcius(data.main.temp);
-  let src = "img/temperatura.png";
+  let src = "img/algoDeNubes.gif";
 
-  if (data.weather[0].description == "cielo claro") {
+  if (
+    data.weather[0].description == "cielo claro" ||
+    data.weather[0].description == "Sol"
+  ) {
     src = "img/sol.gif";
   }
-  if (data.weather[0].description == "nubes") {
+  if (
+    data.weather[0].description == "nubes" ||
+    data.weather[0].description == "nubes dispersas"
+  ) {
     src = "img/nubes.gif";
   }
   if (data.weather[0].description == "algo de nubes") {
     src = "img/algoDeNubes.gif";
   }
-  if (data.weather[0].description == "nubes dispersas") {
-    src = "img/nubesDispersas.gif";
-  }
   if (data.weather[0].description == "muy nuboso") {
-    src = "img/muyNuboso.gif";
+    src = "img/nube.gif";
   }
-  if (data.weather[0].description == "lluvia ligera") {
+  if (
+    data.weather[0].description == "lluvia ligera" ||
+    data.weather[0].description == "lluvia moderada"
+  ) {
     src = "img/tormenta.png";
   }
 
-  /*  if (temp > 26) {
-    src = "img/sol.gif";
-    card.style.background = "img/sun.png";
-  } else if (data.weather[0].description == "muy nuboso") {
-    src = "img/tormenta.png";
-  } else if (temp < 20) {
-    src = "img/temperatura-baja.png";
-  } */
   tempImg.src = src;
 }
 
@@ -88,23 +86,32 @@ document
 function toggleColors() {
   const searchbox = document.getElementById("searchbox");
   const title = document.querySelector("h1");
+  const weatherCard = document.getElementById("card");
   const isInverted = searchbox.classList.contains("inverted"); // Verifica si ya está invertido
 
   if (isInverted) {
     // Regresar a los colores originales
     searchbox.classList.remove("inverted");
-    searchbox.style.backgroundColor = "#2C2C2C"; // fondo oscuro
-    searchbox.style.color = "#7DF9FF"; // Texto azul electrico
-    searchbox.style.border = "2px solid #F3F6F5"; // Borde original
+    searchbox.style.backgroundColor = "#F3F6F5"; // fondo claro
+    searchbox.style.color = "#2C2C2C"; // Texto oscuro
+    searchbox.style.border = "2px solid #2C2C2C"; // Borde original
 
-    title.style.color = "#1E90FF"; //texto claro
+    title.style.color = "#F3F6F5"; //texto claro
+
+    weatherCard.style.backgroundColor = "#F3F6F5"; // Fondo claro para la tarjeta
+    weatherCard.style.color = "#2C2C2C"; // Texto oscuro para la tarjeta
+    weatherCard.style.border = "none";
   } else {
     // Invertir colores
     searchbox.classList.add("inverted");
-    searchbox.style.backgroundColor = "#F3F6F5"; // Fondo claro
-    searchbox.style.color = "#2C2C2C"; // Texto oscuro
-    searchbox.style.border = "2px solid #2C2C2C"; // Borde para el modo invertido
+    searchbox.style.backgroundColor = "#2C2C2C"; // Fondo oscuro
+    searchbox.style.color = "#7DF9FF "; // Texto azul electrico
+    searchbox.style.border = "2px solid #F3F6F5"; // Borde para el modo invertido
 
-    title.style.color = "#F3F6F5";
+    title.style.color = "#1E90FF";
+
+    weatherCard.style.backgroundColor = "#1e90ff"; // Fondo oscuro para la tarjeta
+    weatherCard.style.color = "#F3F6F5"; // Texto claro para la tarjeta
+    weatherCard.style.border = "2px solid #7DF9FF";
   }
 }
