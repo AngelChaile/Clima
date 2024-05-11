@@ -4,7 +4,6 @@ const api = {
 };
 
 let card = document.getElementById("card");
-
 const city = document.getElementById("city");
 const date = document.getElementById("date");
 const tempImg = document.getElementById("temp-img");
@@ -96,7 +95,7 @@ function toggleColors() {
     searchbox.style.color = "#2C2C2C"; // Texto oscuro
     searchbox.style.border = "2px solid #2C2C2C"; // Borde original
 
-    title.style.color = "#F3F6F5"; //texto claro
+    title.style.color = "#F3F6F5";
 
     weatherCard.style.backgroundColor = "#F3F6F5"; // Fondo claro para la tarjeta
     weatherCard.style.color = "#2C2C2C"; // Texto oscuro para la tarjeta
